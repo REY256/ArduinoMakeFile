@@ -3,15 +3,15 @@ all: main.hex
 DEVICE = atmega328p
 CLOCK = 16000000
 
-COMPILE = avr-gcc -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE)
+COMPILE = avr-g++ -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE)
 
-.c.o:
+.cpp.o:
 	$(COMPILE) -c $< -o $@
 
 .S.o:
-	$(COMPILE) -x assembler-with-c -c $< -o $@
+	$(COMPILE) -x assembler-with-cpp -c $< -o $@
 
-.c.s:
+.cpp.s:
 	$(COMPILE) -S $< -o $@
 
 main.elf: main.o
