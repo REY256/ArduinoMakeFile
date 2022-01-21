@@ -24,4 +24,4 @@ flash:	all
 	sudo avrdude -c arduino -P /dev/ttyACM0 -p $(DEVICE) -U flash:w:main.hex:i
 
 clear:
-	rm -f main.hex main.elf main.o
+	rm -f main.elf main.o
